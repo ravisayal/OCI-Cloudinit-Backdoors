@@ -15,6 +15,14 @@ To enable console access we need to create a user that has a password configured
 
 Be aware, that when a user has SSH access, they can switch to the backdoor user if they know that user's password.
 
+* Here is the command for generating Linux Encrypted password (works on Ubuntu, RedHat or even Git-bash)
+
+```shell
+read -p "Enter password: " -s PASSWORD; echo; openssl passwd -1 -stdin <<< $PASSWORD
+
+```
+
+
 ## Windows
 Windows cloud-init script does a lot more. First is enabled the instance to have commandline/powershell access via serial port. It creates the backdoor user and configures it to NOT have RDP access. It also hides the default usernames from the login screen.
 
